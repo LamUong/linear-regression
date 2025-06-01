@@ -17,7 +17,7 @@ body {
 
 /* Header */
 header {
-    background: #2c3e50; /* Dark Blue/Charcoal */
+    background: #082745; /* Dark Blue/Charcoal */
     color: #fff;
     padding: 1rem 0;
     text-align: center;
@@ -38,10 +38,11 @@ header p {
 
 /* Hero Section */
 .hero {
-    background: url('https://source.unsplash.com/1600x900/?data,financial-chart') no-repeat center center/cover; /* Generic image: data and financial chart */
+    background: url('images/stock_bars.avif') no-repeat center center/cover;
+    background-size: cover;
     color: #fff;
     text-align: center;
-    padding: 100px 0;
+    padding: 200px 0;
     position: relative;
     z-index: 1;
 }
