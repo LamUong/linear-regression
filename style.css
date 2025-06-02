@@ -1,7 +1,7 @@
 /* CSS Variables for Consistent Theme */
 :root {
     /* Colors */
-    --primary-blue: #2A628F; /* A more subdued, professional blue */
+    --primary-blue: #193143; /* A more subdued, professional blue */
     --secondary-blue: #3C8CE7; /* A slightly brighter blue for accents/hover */
     --text-dark: #333; /* Dark gray for primary text */
     --text-light: #F8F8F8; /* Off-white for text on dark backgrounds */
