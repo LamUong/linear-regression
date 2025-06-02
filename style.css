@@ -1,15 +1,43 @@
+/* CSS Variables for Consistent Theme */
+:root {
+    /* Colors */
+    --primary-blue: #2A628F; /* A more subdued, professional blue */
+    --secondary-blue: #3C8CE7; /* A slightly brighter blue for accents/hover */
+    --text-dark: #333; /* Dark gray for primary text */
+    --text-light: #F8F8F8; /* Off-white for text on dark backgrounds */
+    --background-light: #F7F9FB; /* Very light, subtle off-white background (this will now be the main background color) */
+    --background-alt: #EBF2F8; /* Slightly darker light blue for alternating sections */
+    --background-card: #FFFFFF; /* White for feature cards */
+    --accent-green: #2ECC71; /* A classic, professional green */
+    --accent-yellow: #FFC107; /* A warm, professional yellow */
+    --shadow-light: rgba(0, 0, 0, 0.1); /* Lighter shadow for cards/sections */
+    --overlay-dark: rgba(0, 0, 0, 0.65); /* Slightly darker overlay for better text contrast */
+
+    /* Fonts */
+    --font-roboto: 'Roboto', sans-serif;
+    --font-montserrat: 'Montserrat', sans-serif;
+
+    /* Spacing & Sizing */
+    --container-width: 85%; /* Slightly wider container for more content space */
+    --section-padding: 80px 0; /* More generous vertical padding for sections */
+    --header-padding: 1.5rem 0; /* Slightly more padding for header */
+    --gap-md: 30px; /* Consistent gap for flex items */
+    --border-radius: 8px; /* Consistent border radius */
+    --section-spacing: 40px; /* Consistent space between sections and before footer */
+}
+
 /* General Body Styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-roboto);
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #333;
-    background-color: #f0f8ff; /* Light Blue background */
+    color: var(--text-dark);
+    background-color: var(--background-light); /* This color will now be the main page background */
 }
 
 .container {
-    width: 80%;
+    width: var(--container-width);
     margin: auto;
     overflow: hidden;
     padding: 20px 0;
@@ -17,32 +45,32 @@ body {
 
 /* Header */
 header {
-    background: #3a7bd5; /* Brighter Blue */
-    color: #fff;
-    padding: 1rem 0;
+    background: var(--primary-blue); /* Professional blue */
+    color: var(--text-light);
+    padding: var(--header-padding);
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 8px var(--shadow-light); /* More pronounced, but still subtle shadow */
 }
 
 header h1 {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
+    font-family: var(--font-montserrat);
+    font-size: 2.8rem; /* Slightly larger heading */
 }
 
 header p {
-    font-size: 1.1rem;
-    margin-top: 5px;
-    opacity: 0.9;
+    font-size: 1.2rem; /* Slightly larger sub-text */
+    margin-top: 8px; /* More vertical space */
+    opacity: 0.95; /* Slightly less opaque */
 }
 
 /* Hero Section */
 .hero {
+    /* Ensure you have optimized images in these paths: images/stock_bars.webp, images/stock_bars.jpg */
     background: url('images/stock_bars.avif') no-repeat center center/cover;
-    background-size: cover;
-    color: #fff;
+    color: var(--text-light);
     text-align: center;
-    padding: 200px 0;
+    padding: 220px 0; /* Increased padding for more impact */
     position: relative;
     z-index: 1;
 }
@@ -54,188 +82,238 @@ header p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Slightly lighter overlay */
+    background: var(--overlay-dark); /* Darker overlay for strong text contrast */
     z-index: -1;
 }
 
 .hero h2 {
-    font-size: 3rem;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem; /* Larger hero heading */
+    margin-bottom: 25px; /* Consistent margin */
+    font-family: var(--font-montserrat);
+    line-height: 1.2; /* Improved readability */
 }
 
 .hero p {
-    font-size: 1.3rem;
-    max-width: 800px;
+    font-size: 1.4rem; /* Larger hero paragraph */
+    max-width: 850px; /* Slightly wider max-width */
     margin: auto;
     line-height: 1.8;
 }
 
 /* Sections */
 .section {
-    padding: 60px 0;
+    padding: var(--section-padding); /* Consistent section padding */
     text-align: center;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    /* Subtle background pattern - you can replace this with an image URL if desired */
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACg7k/SAAABGklEQVQImWNgYGBgYBBkAAAHAA/vJvFkAAAAASUVORK5CYII=');
-    background-repeat: repeat;
+    background: var(--background-card); /* White background for sections */
+    box-shadow: 0 2px 12px var(--shadow-light); /* More depth with shadow */
+    /* margin-bottom: 20px; - REMOVED: Spacing handled by margin-top on subsequent elements */
+    border-radius: var(--border-radius); /* Consistent border radius */
 }
 
 .section-alt {
-    padding: 60px 0;
+    padding: var(--section-padding);
     text-align: center;
-    background: #f9f9f9; /* Very light gray */
-    /* Subtle background pattern - you can replace this with an image URL if desired */
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACg7k/SAAABGklEQVQImWNgYGBgYBBkAAAHAA/vJvFkAAAAASUVORK5CYII=');
-    background-repeat: repeat;
+    background: var(--background-alt); /* Light blue for alternating sections */
+    /* margin-bottom: 20px; - REMOVED: Spacing handled by margin-top on subsequent elements */
+    border-radius: var(--border-radius); /* Consistent border radius */
 }
 
+/* Apply margin-top to all sections *after* the hero section, and to the footer */
+#our-approach,
+#why-choose-us,
+#contact,
+footer {
+    margin-top: var(--section-spacing); /* Creates consistent space from the element above */
+}
+
+
 .section h2, .section-alt h2 {
-    font-size: 2.5rem;
-    color: #3a7bd5; /* Brighter Blue */
-    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem; /* Consistent heading size */
+    margin-bottom: 50px; /* More space below headings */
+    color: var(--primary-blue); /* Consistent primary blue for headings */
+    font-family: var(--font-montserrat);
 }
 
 /* Features (Our Approach Section) */
 .features {
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Center items if they don't fill space */
     flex-wrap: wrap;
-    gap: 30px;
+    gap: var(--gap-md); /* Consistent gap */
     margin-top: 40px;
 }
 
 .feature-item {
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: var(--background-card); /* White background for cards */
+    padding: 35px; /* Slightly more padding inside cards */
+    border-radius: var(--border-radius); /* Consistent border radius */
+    box-shadow: 0 6px 20px var(--shadow-light); /* Deeper shadow for cards */
     flex: 1;
     min-width: 280px;
-    max-width: 350px;
+    max-width: 380px; /* Slightly wider max-width for cards */
     text-align: left;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for shadow too */
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Very subtle border */
 }
 
 .feature-item:hover {
-    transform: translateY(-10px);
+    transform: translateY(-12px); /* Slightly more pronounced lift */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 .feature-item h3 {
-    color: #00b894; /* Teal/Green - another lively color */
-    font-size: 1.8rem;
+    color: var(--primary-blue); /* Using primary blue for consistent branding */
+    font-size: 2rem; /* Larger feature heading */
     margin-top: 0;
-    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 15px; /* Added margin below heading */
+    font-family: var(--font-montserrat);
 }
 
 .feature-item p {
-    font-size: 1rem;
-    color: #555;
+    font-size: 1.05rem; /* Slightly larger text */
+    color: var(--text-dark);
 }
 
 /* Contact Section */
+/* Contact Section - Aligned with "Why Choose Us?" Professional Theme */
 #contact {
-    background: url('https://source.unsplash.com/1600x900/?technology,network') no-repeat center center/cover; /* Technology background */
-    color: #fff;
-    padding: 80px 0;
+    /* Removed background image and overlay for consistency */
+    background: var(--background-card); /* White background, matching "Why Choose Us?" section */
+    color: var(--text-dark); /* Dark text for readability on a light background */
+    padding: var(--section-padding); /* Consistent padding */
     text-align: center;
-    position: relative;
-    z-index: 1;
+    box-shadow: 0 2px 12px var(--shadow-light); /* Consistent shadow */
+    border-radius: var(--border-radius); /* Consistent border radius */
+    /* Position relative and z-index no longer needed without image background/overlay */
+    /* Remove these properties if they only served the image overlay:
+       position: relative;
+       z-index: 1;
+    */
 }
 
+/* If you previously had #contact::before for the overlay, remove it */
 #contact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Darker overlay for better text contrast */
-    z-index: -1;
+    display: none; /* Hide the pseudo-element overlay */
 }
+
 
 #contact .container {
-    position: relative; /* Ensure text is above overlay */
-    z-index: 2;
+    /* Position relative and z-index no longer needed to float above overlay */
+    /* Remove these properties:
+       position: relative;
+       z-index: 2;
+    */
 }
 
 #contact h2 {
-    color: #fff;
+    color: var(--primary-blue); /* Headings in primary blue */
 }
 
 #contact p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1.05rem; /* Standard paragraph size */
+    margin-bottom: 25px; /* Adjust margin as needed */
+    color: var(--text-dark); /* Ensure paragraph text is dark */
 }
 
 #contact ul {
     list-style: none;
     padding: 0;
-    margin-top: 30px;
+    margin-top: 20px; /* Adjust margin */
 }
 
 #contact ul li {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
+    margin-bottom: 12px; /* Adjust spacing between list items */
+    font-size: 1.05rem; /* Standard text size */
+}
+
+#contact ul li strong {
+    color: var(--primary-blue); /* Make names stand out slightly with primary blue */
 }
 
 #contact ul li a {
-    color: #f1c40f; /* Yellow/Gold - another lively accent */
+    color: var(--secondary-blue); /* Use secondary blue for links */
     text-decoration: none;
-    font-weight: bold;
+    font-weight: normal; /* Keep standard weight unless emphasis is needed */
     transition: color 0.3s ease;
 }
 
 #contact ul li a:hover {
-    color: #e6b800; /* Slightly darker yellow on hover */
+    color: var(--primary-blue); /* Hover to primary blue */
     text-decoration: underline;
 }
 
 /* Footer */
 footer {
-    background: #3a7bd5; /* Brighter Blue */
-    color: #fff;
+    background: var(--primary-blue); /* Matches header blue */
+    color: var(--text-light);
     text-align: center;
-    padding: 20px 0;
+    padding: 25px 0; /* Slightly more padding */
+    /* margin-top moved to combined rule above */
+    box-shadow: 0 -3px 8px var(--shadow-light); /* Shadow above footer */
 }
 
 footer p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 1rem; /* Slightly larger footer text */
+    opacity: 0.9;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        width: 95%;
+        width: 90%; /* Increase width for smaller screens */
     }
 
     header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .hero {
-        padding: 100px 0;
+        padding: 120px 0; /* Adjust padding for smaller screens */
     }
 
     .hero h2 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
     .hero p {
         font-size: 1.1rem;
     }
 
+    /* Adjust section spacing for mobile */
+    #our-approach,
+    #why-choose-us,
+    #contact,
+    footer {
+        margin-top: 30px; /* Slightly less space on mobile */
+    }
+
     .section h2, .section-alt h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        margin-bottom: 30px; /* Adjust margin */
     }
 
     .features {
         flex-direction: column;
         align-items: center;
+        gap: 20px; /* Smaller gap on mobile */
     }
 
     .feature-item {
-        max-width: 90%;
+        max-width: 95%; /* Almost full width */
+        padding: 25px; /* Adjust internal padding */
     }
+
+    #contact p {
+        font-size: 1.1rem;
+    }
+
+    #contact ul li {
+        font-size: 1.1rem;
+    }
+}
+
+/* Additional Consideration for accessibility and subtle effects */
+html {
+    scroll-behavior: smooth; /* For smooth scrolling if you add anchor links */
 }
